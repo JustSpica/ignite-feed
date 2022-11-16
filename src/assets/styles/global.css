@@ -9,3 +9,7 @@ body {
 body, input, texarea, button {
   @apply font-sans text-base font-normal
 }
+
+:focus {
+  @apply outline-none outline-green-500
+}
