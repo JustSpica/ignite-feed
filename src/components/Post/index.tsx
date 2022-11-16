@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { Paragraph } from './components/Paragraph';
-import { CommentForm } from './components/CommentForm';
+import { Avatar } from 'components';
+import { Comment, CommentForm, Paragraph } from './components';
 
 export function Post() {
   return (
     <article className="p-10 bg-gray-800 rounded-lg">
       <header className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <img
+          <Avatar
             src="https://i.pinimg.com/originals/b1/04/bb/b104bbae594b5621c4b65c173b8e3206.jpg"
-            className="w-16 h-16 border-2 border-gray-800 rounded-lg outline outline-2 outline-green-500"
+            hasBorder
           />
           <div className="flex flex-col">
             <strong className="text-gray-200 leading-relaxed">
@@ -29,7 +29,7 @@ export function Post() {
           Publicado há 1h
         </time>
       </header>
-      <div className="mt-6 text-gray-400 leading-relaxed">
+      <section className="mt-6 text-gray-400 leading-relaxed">
         <Paragraph>Fala galeraa 👋</Paragraph>
         <Paragraph>
           Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
@@ -41,8 +41,13 @@ export function Post() {
         <Paragraph asChild asAnchor>
           <a href="">#novoprojeto #nlw #rocketseat</a>
         </Paragraph>
-      </div>
+      </section>
       <CommentForm />
+      <section className="mt-8 space-y-6">
+        <Comment />
+        <Comment />
+        <Comment />
+      </section>
     </article>
   );
 }
